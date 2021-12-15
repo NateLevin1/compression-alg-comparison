@@ -15,3 +15,13 @@ Once you have compiled it, run with:
 ```bash
 ./main
 ```
+
+### Compilation Issues
+
+This program depends on 3 libraries to be compiled.
+
+1. https://www.zlib.net
+2. https://www.sourceware.org/bzip2/
+3. https://www.nongnu.org/lzip/lzlib.html
+
+If you are on MacOS you only need to install the third one.

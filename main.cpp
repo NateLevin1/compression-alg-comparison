@@ -6,6 +6,7 @@
 
 #include "algorithms/zlib.h"
 #include "algorithms/bzip2.h"
+#include "algorithms/lzlib.h"
 #include "utils.h"
 
 int main() {
@@ -33,6 +34,10 @@ int main() {
 
     runTest("BZIP2_COMPRESS", dataset, tempDir, [](FILE* inputFile, FILE* outputFile) {
         bz2lib_compress(inputFile, outputFile);
+    });
+
+    runTest("LZLIB_COMPRESS", dataset, tempDir, [](FILE* inputFile, FILE* outputFile) {
+        lzlib_compress(inputFile, outputFile);
     });
     
     rmrf(tempDir);
