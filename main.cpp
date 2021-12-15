@@ -11,7 +11,7 @@
 int main() {
     int ret = 0;
 
-    const char* dataset = "dataset/lipsum.txt";
+    const char* dataset = "datasets/zlib.tar";
 
     std::cout << "Program Started." << std::endl;
 

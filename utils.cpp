@@ -16,6 +16,15 @@ void runTest(const char* name, const char* dataset, char* tempDir, void (*cb)(FI
 
     FILE* outputFile = fopen(outputLoc, "wb");
     FILE* inputFile = fopen(dataset, "r");
+
+    if(!outputFile) {
+        fputs("Could not open output file\n", stderr);
+        return;
+    }
+    if(!inputFile) {
+        fputs("Could not open input file\n", stderr);
+        return;
+    }
     
     // * COMPRESSION RATIO TEST
     struct stat beforeStats;
