@@ -5,6 +5,7 @@
 #include <sys/stat.h>
 
 #include "algorithms/zlib.h"
+#include "algorithms/bzip2.h"
 #include "utils.h"
 
 int main() {
@@ -28,6 +29,10 @@ int main() {
 
     runTest("ZLIB_DEFLATE", dataset, tempDir, [](FILE* inputFile, FILE* outputFile) {
         zlib_deflate(inputFile, outputFile);
+    });
+
+    runTest("BZIP2_COMPRESS", dataset, tempDir, [](FILE* inputFile, FILE* outputFile) {
+        bz2lib_compress(inputFile, outputFile);
     });
     
     rmrf(tempDir);
