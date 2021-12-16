@@ -12,7 +12,7 @@
 int main() {
     int ret = 0;
 
-    const char* dataset = "datasets/zlib.tar";
+    const char* dataset = "datasets/website.tar";
 
     std::cout << "Program Started." << std::endl;
 
