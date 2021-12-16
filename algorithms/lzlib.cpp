@@ -18,11 +18,15 @@ int lzlib_compress(FILE *const infile, FILE *const outfile)
         }
     }
 
+    LZ_compress_restart_member(encoder, 1e+15);
+
     int buffer_size = 16384;
 
     uint8_t buffer[buffer_size];
+    int e = 0;
     while (true)
     {
+        e++;
         int len, ret;
         int size = std::min(buffer_size, LZ_compress_write_size(encoder));
         if (size > 0)
@@ -40,8 +44,9 @@ int lzlib_compress(FILE *const infile, FILE *const outfile)
         len = fwrite(buffer, 1, ret, outfile);
         if (len < ret)
             break;
-        if (LZ_compress_finished(encoder) == 1)
+        if (LZ_compress_finished(encoder) == 1) {
             return 0;
+        }
     }
     return 1;
 }
