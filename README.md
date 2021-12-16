@@ -16,6 +16,8 @@ Once you have compiled it, run with:
 ./main
 ```
 
+**Alternatively,** you can run `./runtest` to compile and run the program 5 times automatically.
+
 ### Compilation Issues
 
 This program depends on 3 libraries to be compiled.

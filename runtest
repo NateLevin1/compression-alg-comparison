@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo -e '\033[0;34mCompiling...\033[0m'
+
+# compile
+g++ $(find . -type f -iregex ".*\.cpp") -o main -lz -lbz2 -llz -std=c++0x
+
+echo -e '\033[0;32mStarting test!\033[0m'
+
+sleep 5
+
+# run the program 5 times
+runs=5
+for i in `seq $runs`
+do
+    echo -e "\033[0;31m---------------- RUN #$i ----------------\033[0m"
+    ./main
+    sleep 15
+done
