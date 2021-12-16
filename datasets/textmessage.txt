@@ -1,0 +1,1 @@
+This is a short example text message. How will compression affect it? Run the tests to find out.
