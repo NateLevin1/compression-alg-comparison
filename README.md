@@ -7,7 +7,7 @@ Benchmark of popular compression algorithms (Zlib/Gzip, Lzip, Bzip2, and Brotli)
 The following command will compile the program:
 
 ```bash
-g++ $(find . -type f -iregex ".*\.cpp") -o main -lz -std=c++0x
+g++ $(find . -type f -iregex ".*\.cpp") -o main -lz -lbz2 -llz -std=c++0x
 ```
 
 Once you have compiled it, run with:
